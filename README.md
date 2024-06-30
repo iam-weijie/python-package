@@ -24,7 +24,6 @@ Within the Python interpreter, you can use the distributions as follows:
 
 ```python
 from distributions import Gaussian
-import matplotlib.pyplot as plt
 
 # Example 1: Create a Gaussian distribution object with default mean 0 and standard deviation 1
 gaussian_one = Gaussian()
@@ -36,7 +35,6 @@ print(gaussian_one.stdev)
 
 # Plot a histogram and the probability density function (pdf) of the Gaussian distribution
 gaussian_one.plot_histogram_pdf()
-plt.show()
 
 # Example 3: Add two Gaussian distributions
 gaussian_two = Gaussian(5, 2)
@@ -49,20 +47,19 @@ print(combined_distribution.stdev)
 
 ```python
 from distributions import Binomial
-import matplotlib.pyplot as plt
 
 # Example 1: Create a Binomial distribution object with probability 0.5 and 20 trials
 binomial_one = Binomial(0.5, 20)
 
-# Calculate the mean and standard deviation of the Binomial distribution
-print(binomial_one.calculate_mean())
-print(binomial_one.calculate_stdev())
+# Example 2: Read data from a file and calculate mean and standard deviation
+binomial_one.read_data_file('binomial_data.txt')
+print(binomial_one.mean)
+print(binomial_one.stdev)
 
 # Plot a bar chart and the probability density function (pdf) of the Binomial distribution
 binomial_one.plot_bar_pdf()
-plt.show()
 
-# Example 2: Add two Binomial distributions with the same probability
+# Example 3: Add two Binomial distributions with the same probability
 binomial_two = Binomial(0.5, 10)
 combined_binomial = binomial_one + binomial_two
 print(combined_binomial.p)
@@ -71,9 +68,11 @@ print(combined_binomial.n)
 
 ## Features
 
-- Create Gaussian and Binomial distribution objects
+- Create Gaussian distribution objects
 
-- Read data from a file for distributions
+- Create Binomial distribution objects
+
+- Read data from a file for both Gaussian and Binomial distributions
 
 - Access the mean and standard deviation of distributions
 
@@ -84,7 +83,6 @@ print(combined_binomial.n)
 ## Requirements
 
 - Python 3.x
-- matplotlib (for plotting)
 
 ## License
 
