@@ -1,4 +1,4 @@
-# PyP
+# pb-distr
 
 This is a Python Package containing implementations of Gaussian and Binomial Distributions.
 
