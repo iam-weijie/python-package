@@ -1,6 +1,6 @@
 # PyP
 
-This is a Python Package containing Guassian Distribution implementation.
+This is a Python Package containing implementations of Gaussian and Binomial Distributions.
 
 ## Installation
 
@@ -18,34 +18,80 @@ After installation, you can use the package by starting the Python interpreter f
 python3
 ```
 
-Within the Python interpreter, you can use the Gaussian distribution class as follows:
+Within the Python interpreter, you can use the distributions as follows:
+
+### Gaussian Distribution
 
 ```python
 from distributions import Gaussian
+import matplotlib.pyplot as plt
 
-# Create a Gaussian distribution object with a mean of 25 and a standard deviation of 2
-gaussian_one = Gaussian(25, 2)
+# Example 1: Create a Gaussian distribution object with default mean 0 and standard deviation 1
+gaussian_one = Gaussian()
 
-# Access the mean of the Gaussian distribution
+# Example 2: Read data from a file and calculate mean and standard deviation
+gaussian_one.read_data_file('data.txt')
 print(gaussian_one.mean)
+print(gaussian_one.stdev)
 
-# Add two Gaussian distributions
-gaussian_two = gaussian_one + gaussian_one
-print(gaussian_two.mean)
+# Plot a histogram and the probability density function (pdf) of the Gaussian distribution
+gaussian_one.plot_histogram_pdf()
+plt.show()
+
+# Example 3: Add two Gaussian distributions
+gaussian_two = Gaussian(5, 2)
+combined_distribution = gaussian_one + gaussian_two
+print(combined_distribution.mean)
+print(combined_distribution.stdev)
+```
+
+### Binominal Distribution
+
+```python
+from distributions import Binomial
+import matplotlib.pyplot as plt
+
+# Example 1: Create a Binomial distribution object with probability 0.5 and 20 trials
+binomial_one = Binomial(0.5, 20)
+
+# Calculate the mean and standard deviation of the Binomial distribution
+print(binomial_one.calculate_mean())
+print(binomial_one.calculate_stdev())
+
+# Plot a bar chart and the probability density function (pdf) of the Binomial distribution
+binomial_one.plot_bar_pdf()
+plt.show()
+
+# Example 2: Add two Binomial distributions with the same probability
+binomial_two = Binomial(0.5, 10)
+combined_binomial = binomial_one + binomial_two
+print(combined_binomial.p)
+print(combined_binomial.n)
 ```
 
 ## Features
 
-- Create Gaussian distribution objects
+- Create Gaussian and Binominal distribution objects
 
-- Access the mean and standard deviation
+- Read data from a file for distributions
 
-- Add two Gaussian distributions
+- Access the mean and standard deviation of distributions
+
+- Plot histograms and probability density functions (pdf) for distributions
+
+- Add two distributions of the same type
 
 ## Requirements
 
 - Python 3.x
+- matplotlib (for plotting)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- This package is developed under the guidance and course material of Unity's AI Programming with Python.
+
+- It is inspired by the need to easily create and manipulate Gaussian and Binomial distributions in Python.
