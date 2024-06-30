@@ -7,7 +7,7 @@ This is a Python Package containing implementations of Gaussian and Binomial Dis
 To install the package, run the following command in your terminal:
 
 ```bash
-pip3 install .
+pip3 install pb-distr
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ Within the Python interpreter, you can use the distributions as follows:
 ### Gaussian Distribution
 
 ```python
-from distributions import Gaussian
+from pb_distr import Gaussian
 
 # Example 1: Create a Gaussian distribution object with default mean 0 and standard deviation 1
 gaussian_one = Gaussian()
@@ -46,7 +46,7 @@ print(combined_distribution.stdev)
 ### Binomial Distribution
 
 ```python
-from distributions import Binomial
+from pb_distr import Binomial
 
 # Example 1: Create a Binomial distribution object with probability 0.5 and 20 trials
 binomial_one = Binomial(0.5, 20)
