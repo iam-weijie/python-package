@@ -122,6 +122,7 @@ class Binomial(Distribution):
         plt.title = "Distribution of Outcomes"
         plt.xaxis = "Outcome"
         plt.yaxis = "Probability"
+        plt.show()
 
         return x, y
 
