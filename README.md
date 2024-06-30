@@ -45,7 +45,7 @@ print(combined_distribution.mean)
 print(combined_distribution.stdev)
 ```
 
-### Binominal Distribution
+### Binomial Distribution
 
 ```python
 from distributions import Binomial
@@ -71,7 +71,7 @@ print(combined_binomial.n)
 
 ## Features
 
-- Create Gaussian and Binominal distribution objects
+- Create Gaussian and Binomial distribution objects
 
 - Read data from a file for distributions
 
